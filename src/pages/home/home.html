@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Pizza App
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2 id="title">Commandez vos pizza</h2>
+  <ion-list inset>
+      <ion-item *ngFor="let pizza of pizzas">
+        <ion-card class="card">
+          <img width="100px" height="100px" src="{{pizza.picture}}"/>
+          <ion-card-content>
+            <ion-card-title>
+              <h2>{{pizza.name}}</h2>
+              </ion-card-title>
+              <p>{{pizza.desc}}</p>
+              Prix<p>{{pizza.price}} €</p>
+              Ingrédients<p>{{pizza.ingredients}}</p>
+              <button class="green" ion-button>Ajouter au panier</button>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+    </ion-list>
+    <button ion-button [navPush]="Admin">Ajouter une pizza</button>
+</ion-content>
